@@ -19,6 +19,16 @@ body {
   margin: 0;
 }
 
+#videoBG {
+  position: fixed;
+  z-index: -1;
+
+  /*not work if the screen ratio is below 16/9*/
+  width: 100%;
+  height: auto;
+}
+
+
 .music-container {
   background-color: #fff;
   border-radius: 15px;
