@@ -27,7 +27,7 @@ body {
   padding: 20px 30px;
   position: relative;
   margin: 100px 0;
-  z-index: 110px;
+  z-index: 10px;
 }
 
 .img-container {
@@ -35,7 +35,6 @@ body {
   width: 110px;
 }
 
-,
 .img-container img {
   border-radius: 50%;
   object-fit: cover;
