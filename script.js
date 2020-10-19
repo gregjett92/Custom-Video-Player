@@ -6,12 +6,12 @@ const nextBtn = document.getElementById("next");
 
 const audio = document.getElementById("audio");
 const progress = document.getElementById("progress");
-const procressContainer = document.getElementById("procress_container");
+const procressContainer = document.getElementById("progress-container");
 const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
 // Song Titles
-const songs = ["hey", "summer", "ukulele"];
+const songs = ["airfield", "success", "youth"];
 
 // Keep track of song
 let songIndex = 2;
