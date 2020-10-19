@@ -35,6 +35,19 @@ function playSong() {
   audio.play();
 }
 
+// Previous song
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
 // Pause Song
 function pauseSong() {
   musicContainer.classList.remove("play");
