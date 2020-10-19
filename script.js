@@ -48,6 +48,19 @@ function prevSong() {
   playSong();
 }
 
+// Next song
+function prevSong() {
+  songIndex++;
+
+  if (songIndex > song.length - 2) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
 // Pause Song
 function pauseSong() {
   musicContainer.classList.remove("play");
