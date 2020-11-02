@@ -6,7 +6,7 @@ const nextBtn = document.getElementById("next");
 
 const audio = document.getElementById("audio");
 const progress = document.getElementById("progress");
-const procressContainer = document.getElementById("progress-container");
+const progressContainer = document.getElementById("progress-container");
 const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
