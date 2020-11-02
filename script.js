@@ -35,6 +35,15 @@ function playSong() {
   audio.play();
 }
 
+// Pause Song
+function pauseSong() {
+  musicContainer.classList.remove("play");
+  playBtn.querySelector("i.fas").classList.add("fa-play");
+  playBtn.querySelector("i.fas").classList.remove("fa-pause");
+
+  audio.pause();
+}
+
 // Previous song
 function prevSong() {
   songIndex--;
@@ -49,10 +58,10 @@ function prevSong() {
 }
 
 // Next song
-function prevSong() {
+function nextSong() {
   songIndex++;
 
-  if (songIndex > song.length - 2) {
+  if (songIndex > songs.length - 2) {
     songIndex = 0;
   }
 
@@ -61,13 +70,20 @@ function prevSong() {
   playSong();
 }
 
-// Pause Song
-function pauseSong() {
-  musicContainer.classList.remove("play");
-  playBtn.querySelector("i.fas").classList.add("fa-play");
-  playBtn.querySelector("i.fas").classList.remove("fa-pause");
+// Update progress bar
+function updateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+}
 
-  audio.pause();
+// set progress bar
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+  
+  audio.currentTime = (clickX / width) * duration;
 }
 
 //Event Listeners
@@ -87,3 +103,9 @@ nextBtn.addEventListener("click", nextSong);
 
 // Time/song update
 audio.addEventListener("timeupdate", updateProgress);
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
+
+// Song ends
+audio.addEventListener('ended', nextSong);
